@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var targetDate = new Date("2023-08-08T06:29:30").getTime();
+  var targetDate = new Date("2023-08-16T23:59:59").getTime();
 
   var countdownInterval = setInterval(function () {
     var now = new Date().getTime();
