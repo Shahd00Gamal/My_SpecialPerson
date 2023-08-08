@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var targetDate = new Date("2023-08-16T23:59:59").getTime();
+  var targetDate = new Date("2023-08-08T06:29:30").getTime();
 
   var countdownInterval = setInterval(function () {
     var now = new Date().getTime();
@@ -19,9 +19,13 @@ $(document).ready(function () {
 
     if (timeRemaining <= 0) {
       clearInterval(countdownInterval);
-      $("#timer").attr("hidden", true);
-      $("#closeB").removeAttr("hidden");
-      $("#slideShow").removeAttr("hidden");
+      $("#closeB").removeAttr("hidden").css({ opacity: "0" });
+      $("#slideShow").removeAttr("hidden").css({ opacity: "0" });
+      $("#timer").animate({ opacity: "0" }, 500, function () {
+        $("#timer").attr("hidden", true);
+        $("#slideShow").animate({ opacity: "1" });
+        $("#closeB").animate({ opacity: "1" });
+      });
     } else {
       $("#photos").attr("hidden", true);
       $("#slideShow").attr("hidden", true);
