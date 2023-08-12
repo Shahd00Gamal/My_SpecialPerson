@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#minutes").text(minutes.toString().padStart(2, "0"));
     $("#seconds").text(seconds.toString().padStart(2, "0"));
 
-    if (timeRemaining <= 0) {
+    if (0 && timeRemaining <= 0) {
       clearInterval(countdownInterval);
       $("#closeB").removeAttr("hidden").css({ opacity: "0" });
       $("#slideShow").removeAttr("hidden").css({ opacity: "0" });
